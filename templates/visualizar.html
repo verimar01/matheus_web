@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizar Inscrições</title>
+</head>
+
+<body>
+    <h2>Inscrições</h2>
+    {% for inscricao in inscricoes %}
+    <div>
+        <p><strong>Nome:</strong> {{ inscricao['nome'] }}</p>
+        <p><strong>Data de Nascimento:</strong> {{ inscricao['data_nascimento'] }}</p>
+        <p><strong>Responsável:</strong> {{ inscricao['responsavel'] }}</p>
+        <p><strong>Email:</strong> {{ inscricao['email'] }}</p>
+        <p><strong>RG do Aluno:</strong> <a href="/uploads/{{ inscricao['rg_aluno'] }}" target="_blank">Visualizar</a>
+        </p>
+        <p><strong>RG dos Pais:</strong> <a href="/uploads/{{ inscricao['rg_pais'] }}" target="_blank">Visualizar</a>
+        </p>
+        <p><strong>Histórico Escolar:</strong> <a href="/uploads/{{ inscricao['historico'] }}"
+                target="_blank">Visualizar</a></p>
+        <hr>
+    </div>
+    {% endfor %}
+</body>
+
+</html>
